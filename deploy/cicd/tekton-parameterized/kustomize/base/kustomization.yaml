@@ -1,0 +1,11 @@
+resources:
+  - eap-eks-git-repo-eventlistener.yaml
+  - eap-eks-ingress.yaml
+  - eap-eks-tekton-triggers-admin-role.yaml
+  - eap-eks-tekton-triggers-admin-rolebinding.yaml
+  - eap-eks-clone-build-push-pipeline.yaml
+  - eap-eks-clone-push-serviceaccount.yaml
+  - eap-eks-git-event-triggerbinding.yaml
+  - eap-eks-image-registry-secret.yaml
+  - eap-eks-run-clone-build-push-triggertemplate.yaml
+  - eap-eks-tekton-triggers-admin-serviceaccount.yaml

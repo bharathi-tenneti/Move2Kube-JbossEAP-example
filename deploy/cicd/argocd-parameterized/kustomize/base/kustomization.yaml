@@ -1,0 +1,2 @@
+resources:
+  - eap-eks-deploy-application.yaml

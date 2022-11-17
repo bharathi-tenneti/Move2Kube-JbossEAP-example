@@ -1,0 +1,17 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  creationTimestamp: null
+  name: eap-eks-git-repo
+spec:
+  namespaceSelector: {}
+  resources: {}
+  serviceAccountName: eap-eks-tekton-triggers-admin
+  triggers:
+    - bindings:
+        - ref: eap-eks-git-event
+      template:
+        ref: eap-eks-run-clone-build-push
+status:
+  configuration:
+    generatedName: ""

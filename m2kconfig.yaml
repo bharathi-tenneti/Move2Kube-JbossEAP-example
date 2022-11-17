@@ -1,0 +1,60 @@
+move2kube:
+  minreplicas: "2"
+  services:
+    helloworld:
+      "8080":
+        servicetype: Ingress
+        urlpath: /
+      enable: true
+      wartransformer: Jboss
+  target:
+    default:
+      clustertype: AWS-EKS
+      ingress:
+        host: eap-eks.com
+        ingressclassname: ""
+        tls: ""
+    imageregistry:
+      namespace: eap-eks
+      quay.io:
+        logintype: no authentication
+      url: quay.io
+  transformers:
+    types:
+      - Jboss
+      - Rust-Dockerfile
+      - KubernetesVersionChanger
+      - Maven
+      - DockerfileDetector
+      - Tekton
+      - Nodejs-Dockerfile
+      - Ruby-Dockerfile
+      - ComposeGenerator
+      - Gradle
+      - WarAnalyser
+      - DotNetCore-Dockerfile
+      - Python-Dockerfile
+      - ComposeAnalyser
+      - Tomcat
+      - ContainerImagesPushScriptGenerator
+      - ArgoCD
+      - EarRouter
+      - Liberty
+      - Jar
+      - ClusterSelector
+      - Parameterizer
+      - WarRouter
+      - Kubernetes
+      - ReadMeGenerator
+      - Buildconfig
+      - Knative
+      - DockerfileParser
+      - DockerfileImageBuildScript
+      - OperatorTransformer
+      - WinWebApp-Dockerfile
+      - EarAnalyser
+      - CloudFoundry
+      - ZuulAnalyser
+      - PHP-Dockerfile
+      - Golang-Dockerfile
+  transformerselector: ""

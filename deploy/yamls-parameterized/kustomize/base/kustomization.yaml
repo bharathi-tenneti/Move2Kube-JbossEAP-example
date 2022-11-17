@@ -1,0 +1,4 @@
+resources:
+  - eap-eks-ingress.yaml
+  - helloworld-deployment.yaml
+  - helloworld-service.yaml
